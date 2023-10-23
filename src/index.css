@@ -1,0 +1,79 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    color: rgb(34, 34, 34);
+}
+.heading{
+  text-align: center;
+  background-color: aqua;
+  height: 12vh;
+ 
+}
+.heading h1{
+  font-size: 40px;
+  font-weight: 600;
+  padding-top: 12px;
+}
+
+.formData{
+  height: 70vh;
+  background-color: rgb(240, 239, 238);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form label{
+  margin-bottom: 5px;
+}
+.form input{
+  margin-bottom: 12px;
+  padding: 12px 70px 12px 5px;
+  outline: none;
+  border: 1px solid rgb(110, 110, 110);
+}
+.btn{
+  background-color: aqua;
+  padding: 12px 0;
+  border: none;
+}
+.btn,
+.formData-list{
+ background-color: aqua;
+ text-transform: uppercase;
+ font-weight: 600;
+ font-size: 16px;
+}
+.data-list{
+  margin-left: 40px;
+  padding: 10px 0;
+}
+.list{
+  display: flex;
+  margin-left: 20px;
+}
+.list li{
+  text-transform: capitalize;
+  margin-left: 10px;
+  list-style-type: none;
+}
+.list span{
+  font-weight: 800;
+}
+.delete-btn{
+  margin: -3px 0 0 20px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+}
