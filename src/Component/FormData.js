@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react'
+import { useEffect } from 'react'
 
 const initialState={
   firstName: "",
@@ -39,8 +40,20 @@ function reducer(state, action){
 }
 
 
-export default function FormData({AddData}) {
+export default function FormData({AddData, editData, setEditData}) {
   const[{ firstName, lastName, phoneNo, address}, dispatch]=useReducer(reducer, initialState);
+
+  useEffect(()=>{
+   if(editData){
+    updateField("FirstName", editData.firstName);
+    updateField("LastName", editData.lastName);
+    updateField("PhoneNo", editData.phoneNo);
+    updateField("Address", editData.address);
+   }}, [editData]);
+
+   function updateField(name, value){
+    dispatch({type: name, payload: value });
+   }
 
   function handleSubmit(e){
     e.preventDefault();
@@ -48,7 +61,12 @@ export default function FormData({AddData}) {
     const newItem={firstName, lastName, phoneNo, address, id: Date.now() };
     AddData(newItem);
     dispatch({type: "ClearForm"});
-   }
+    }
+   
+    function handleCancel(){
+      setEditData(null);
+      dispatch({type: "ClearForm"});
+    }
 
   return (
     <div>
@@ -65,8 +83,9 @@ export default function FormData({AddData}) {
             <label>Address</label>
             <input type="text" placeholder="Address"  value={address} 
             onChange={(e)=>dispatch({type: "Address", payload: e.target.value})}/>
-            <button className="btn">Insert</button>
+            <button className="btn">{editData? "Edit": "Insert"}</button>
           </form>
+          {editData  && <button className="cancel-btn" onClick={handleCancel}>Cancel</button>}
     </div>
   )
 }
