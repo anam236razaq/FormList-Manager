@@ -1,3 +1,4 @@
+
 *{
   margin: 0;
   padding: 0;
@@ -44,20 +45,23 @@ body {
   border: 1px solid rgb(110, 110, 110);
 }
 .btn{
-  background-color: aqua;
   padding: 12px 0;
-  border: none;
 }
+
 .btn,
-.formData-list{
+.formData-list,
+.cancel-btn{
  background-color: aqua;
  text-transform: uppercase;
  font-weight: 600;
  font-size: 16px;
+ border: none;
 }
-.data-list{
-  margin-left: 40px;
+.formData-list{
   padding: 10px 0;
+}
+.formData-list h4{
+  margin-left: 30px;
 }
 .list{
   display: flex;
@@ -65,15 +69,19 @@ body {
 }
 .list li{
   text-transform: capitalize;
-  margin-left: 10px;
+  margin: 0 0 10px 10px;
   list-style-type: none;
 }
 .list span{
   font-weight: 800;
 }
-.delete-btn{
-  margin: -3px 0 0 20px;
+.btns{
+  margin: 0 0 0 20px;
   font-size: 20px;
   background-color: transparent;
   border: none;
+}
+.cancel-btn{
+  padding: 14px 100px;
+  margin-top: 10px;
 }
